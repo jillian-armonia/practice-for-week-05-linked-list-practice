@@ -30,9 +30,9 @@ describe('Linked List', () => {
         beforeEach(function () {
             linkedList = new LinkedList();
 
-            linkedList.addToHead(1);
-            linkedList.addToHead(2);
-            linkedList.addToHead(3);
+            linkedList.addToHead(1); // 1 - NULL
+            linkedList.addToHead(2); // 2 - 1 - NULL
+            linkedList.addToHead(3); // 3 - 2 - 1 - NULL
         });
 
         it('addToHead adds the correct head node', () => {
@@ -47,6 +47,7 @@ describe('Linked List', () => {
         it('addToHead correctly modifies the length property', () => {
             expect(linkedList.length).to.equal(3);
         });
+
     });
 
 
@@ -56,9 +57,10 @@ describe('Linked List', () => {
         beforeEach(function () {
             linkedList = new LinkedList();
 
-            linkedList.addToTail(1);
-            linkedList.addToTail(2);
-            linkedList.addToTail(3);
+            linkedList.addToTail(1); //1 - NULL
+            linkedList.addToTail(2); //1 - 2 - NULL
+            linkedList.addToTail(3); //1 - 2 - 3 - NULL
+            linkedList.print()
         });
 
         it('addToTail adds the correct tail value', () => {
