@@ -7,16 +7,40 @@ class DoublyLinkedListNode {
 }
 
 class DoublyLinkedList {
-  constructor() {
-    // Your code here
+  constructor(head = null, tail = null) {
+    this.head = head;
+    this.tail = tail;
+    this.length = 0;
   }
 
   addToHead(val) {
-    // Your code here
+    let node = new DoublyLinkedListNode(val)
+
+    if (!this.head){
+      this.head = node;
+      this.tail = node;
+    } else {
+      this.head.prev = node;
+      node.next = this.head;
+      this.head = node;
+    }
+
+    this.length++;
   }
 
   addToTail(val) {
-    // Your code here
+    let node = new DoublyLinkedListNode(val);
+
+    if(!this.tail){
+      this.tail = node;
+      this.head = node;
+    } else {
+      this.tail.next = node;
+      node.prev = this.tail;
+      this.tail = node;
+    }
+
+    this.length++;
   }
 
   // You can use this function to help debug
